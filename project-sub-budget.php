@@ -69,7 +69,7 @@ include('./db/connect.php');
 
                                 <!-- Data list table -->
 
-                                <table id="example" class="table table-hover" style="margin-top: 3%; width: 100%; border-color: #fff; height: 325px;">
+                                <table id="example" class="table table-hover" style="margin-top: 4%; width: 100%; border-color: #fff;">
                                     <thead class="table-dark">
                                         <tr>
                                             <th>#</th>
