@@ -48,9 +48,9 @@ include('./db/connect.php');
                             <input type="float" name="sub_budget" class="form-control" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="inputState" class="form-label">แผนงาน</label>
+                            <label for="inputState" class="form-label">โครงการ</label>
                             <select name="sub_p_plan_id" class="form-select" required>
-                                <option value="">กรุณาเลือกแผนงาน</option>
+                                <option value="">กรุณาเลือกโครงการ</option>
                                 <?php foreach ($query1 as $p) { ?>
                                     <option value="<?php echo $p["project_id"]; ?>">
                                         <?php echo $p["project_plan"]; ?>
@@ -59,9 +59,9 @@ include('./db/connect.php');
                             </select>
                         </div>
                         <div class="col-md-6">
-                            <label for="inputState" class="form-label">โครงการ/กิจกรรม</label>
+                            <label for="inputState" class="form-label">กิจกรรม</label>
                             <select name="sub_p_name_id" class="form-select" required>
-                                <option value="">กรุณาเลือกโครงการ</option>
+                                <option value="">กรุณาเลือกกิจกรรม</option>
                                 <?php foreach ($query2 as $n) { ?>
                                     <option value="<?php echo $n["project_id"]; ?>">
                                         <?php echo $n["project_name"]; ?>
