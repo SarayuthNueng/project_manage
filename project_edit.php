@@ -35,11 +35,15 @@ include('./db/connect.php');
                 <div class="mt-3">
                     <form class="row g-3" action="project_db.php" method="POST">
                         <?php while ($row = mysqli_fetch_array($query)) { ?>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
+                                <label class="form-label">รหัสโครงการ</label>
+                                <input type="text" name="project_plan" class="form-control" value="<?php echo $row['plan_code'] ?>" disabled>
+                            </div>
+                            <div class="col-md-4">
                                 <label class="form-label">ชื่อแผนงาน</label>
                                 <input type="text" name="project_plan" class="form-control" value="<?php echo $row['project_plan'] ?>">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <label class="form-label">ชื่อโครงการ/กิจกรรม</label>
                                 <input type="text" name="project_name" class="form-control" value="<?php echo $row['project_name'] ?>">
                             </div>

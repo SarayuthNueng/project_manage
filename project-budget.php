@@ -72,6 +72,7 @@ include('./db/connect.php');
 
 
 
+                        <input type="hidden" name="member_id" class="form-control" value="<?php echo $_SESSION['m_id'] ?>">
                         <input type="hidden" name="sub_date" class="form-control" value="<?php echo $currentDate ?>">
                         <input type="hidden" name="sub_time" class="form-control" value="<?php echo $currentTime ?>">
 

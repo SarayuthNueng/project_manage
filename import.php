@@ -26,9 +26,10 @@ if(isset($_POST['importSubmit'])){
             unset($worksheet_arr[0]); 
  
             foreach($worksheet_arr as $row){ 
-                $project_plan = $row[0]; 
-                $project_name = $row[1]; 
-                $project_budget = $row[2];
+                $plan_code = $row[0];
+                $project_plan = $row[1]; 
+                $project_name = $row[2]; 
+                $project_budget = $row[3];
 
                 //check data
                 $check_import = "SELECT * FROM project WHERE project_plan = '$project_plan' AND project_name = '$project_name' ";
@@ -42,7 +43,7 @@ if(isset($_POST['importSubmit'])){
 
                 // บันทึกถ้าไม่ซ้ำ 
                 }else{
-                    $sql2 = " INSERT INTO project (project_plan, project_name, project_budget, project_status, created, modified) VALUES ('".$project_plan."', '".$project_name."', '".$project_budget."', 'อนุมัติ', NOW(), NOW() ) ";
+                    $sql2 = " INSERT INTO project (plan_code,project_plan, project_name, project_budget, project_status, created, modified) VALUES ('".$plan_code."','".$project_plan."', '".$project_name."', '".$project_budget."', 'อนุมัติ', NOW(), NOW() ) ";
                     $import = mysqli_query($conn, $sql2);
                 }
  

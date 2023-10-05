@@ -18,6 +18,7 @@ $sub_p_plan_id = $_POST['sub_p_plan_id'];
 $sub_p_name_id = $_POST['sub_p_name_id'];
 $sub_date = $_POST['sub_date'];
 $sub_time = $_POST['sub_time'];
+$save_m_id = $_SESSION['m_id'];
 
 // print_r($project_status);
 // exit;
@@ -34,10 +35,10 @@ if (!$_SESSION) {
         $check_budget = mysqli_query($conn, $check);
         $num = mysqli_num_rows($check_budget);
         if($num > 0){
-            $sql1 = " UPDATE sub_budget SET sub_name = '" . $sub_name . "', sub_budget = '" . $sub_budget . "', sub_p_plan_id = '" . $sub_p_plan_id . "', sub_p_name_id = '" . $sub_p_name_id . "', sub_modified = NOW() WHERE sub_name = '".$sub_name."' AND sub_budget = '".$sub_budget."' AND sub_date = '".$sub_date."' AND sub_time = '".$sub_time."' ";
+            $sql1 = " UPDATE sub_budget SET sub_name = '" . $sub_name . "', sub_budget = '" . $sub_budget . "', sub_p_plan_id = '" . $sub_p_plan_id . "', sub_p_name_id = '" . $sub_p_name_id . "', sub_modified = NOW(), modified_m_id = '".$save_m_id."' WHERE sub_name = '".$sub_name."' AND sub_budget = '".$sub_budget."' AND sub_date = '".$sub_date."' AND sub_time = '".$sub_time."' ";
             $update = mysqli_query($conn, $sql1);
         }else{
-            $sql2 = " INSERT INTO sub_budget (sub_name, sub_budget, sub_p_plan_id, sub_p_name_id, sub_date, sub_time, sub_created, sub_modified) VALUES (' $sub_name', '$sub_budget','$sub_p_plan_id', '$sub_p_name_id', '$sub_date', '$sub_time', NOW(), NOW() ) ";
+            $sql2 = " INSERT INTO sub_budget (sub_name, sub_budget, sub_p_plan_id, sub_p_name_id, sub_date, sub_time, sub_created, sub_modified, save_m_id, modified_m_id) VALUES (' $sub_name', '$sub_budget','$sub_p_plan_id', '$sub_p_name_id', '$sub_date', '$sub_time', NOW(), NOW(), '$save_m_id', '$save_m_id' ) ";
             $add_sub_budget = mysqli_query($conn, $sql2);
         }
 

@@ -54,7 +54,8 @@ $row_sum_total = mysqli_fetch_array($result);
                 <table id="example" class="table table-hover" style="margin-top: 4%; width: 100%; border-color: #fff;">
                     <thead class="table-dark">
                         <tr>
-                            <th>#</th>
+                            <th>ลำดับ</th>
+                            <th>รหัสโครงการ</th>
                             <th>ชื่อแผนงาน</th>
                             <th>ชื่อโครงการ/กิจกรรม</th>
                             <th>งบประมาณตั้งต้น(บาท)</th>
@@ -72,6 +73,7 @@ $row_sum_total = mysqli_fetch_array($result);
                         ?>
                                 <tr>
                                     <td><?php echo $i; ?></td>
+                                    <td><?php echo $row['plan_code']; ?></td>
                                     <td><?php echo $row['project_plan']; ?></td>
                                     <td><?php echo $row['project_name']; ?></td>
                                     <td><?php $budget = $row['project_budget'];
