@@ -62,6 +62,7 @@ include('./db/connect.php');
                             </div>
 
                             <input type="hidden" name="project_id" class="form-control" value="<?php echo $row['project_id'] ?>">
+                            <input type="hidden" name="edit_user_id" class="form-control" value="<?php echo $_SESSION['m_id'] ?>">
                             <div class="col-12">
                                 <a href="./project-import-plan.php" type="submit" class="btn btn-warning">กลับ</a>
                                 <button type="submit" name="editproject" class="btn btn-success">แก้ไขข้อมูล</button>

@@ -79,6 +79,7 @@ include('./db/connect.php');
 
 
                             <input type="hidden" name="sub_id" class="form-control" value="<?php echo $row['sub_id'] ?>">
+                            <input type="hidden" name="edit_m_id" class="form-control" value="<?php echo $_SESSION['m_id'] ?>">
 
                             <div class="col-12">
                                 <a href="./project-sub-budget.php?project_id=<?php echo $row['project_plan_id'] ?>&&project_name=<?php echo $row['project_name'] ?>&&project_plan=<?php echo $row['project_plan'] ?>&&project_budget=<?php echo $row['project_budget'] ?>" type="submit" class="btn btn-warning">กลับ</a>

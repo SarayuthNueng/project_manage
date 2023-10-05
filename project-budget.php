@@ -16,7 +16,7 @@ include('./db/connect.php');
 
         <?php
         //   dropdrown
-        $sql1 = " SELECT * FROM project ";
+        $sql1 = " SELECT project_id, project_plan, plan_code FROM project GROUP BY project_plan ";
         $query1 = mysqli_query($conn, $sql1);
 
         $sql2 = " SELECT * FROM project ";
@@ -53,7 +53,7 @@ include('./db/connect.php');
                                 <option value="">กรุณาเลือกโครงการ</option>
                                 <?php foreach ($query1 as $p) { ?>
                                     <option value="<?php echo $p["project_id"]; ?>">
-                                        <?php echo $p["project_plan"]; ?>
+                                    <?php echo $p["plan_code"]; ?> <?php echo $p["project_plan"]; ?> 
                                     </option>
                                 <?php } ?>
                             </select>

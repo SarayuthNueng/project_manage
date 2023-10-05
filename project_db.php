@@ -12,6 +12,7 @@ $project_plan = $_POST['project_plan'];
 $project_name = $_POST['project_name'];
 $project_budget = $_POST['project_budget'];
 $project_status = $_POST['project_status'];
+$edit_user_id = $_POST['edit_user_id'];
 
 // print_r($project_status);
 // exit;
@@ -22,7 +23,7 @@ if (!$_SESSION) {
     if (!isset($_POST['editproject'])) {
         Header("Location: home.php");
     } else {
-        $sql = " UPDATE project SET project_plan = '" . $project_plan . "', project_name = '" . $project_name . "', project_budget = '" . $project_budget . "', project_status = '" . $project_status . "', modified = NOW() WHERE project_id = '" . $project_id . "' ";
+        $sql = " UPDATE project SET project_plan = '" . $project_plan . "', project_name = '" . $project_name . "', project_budget = '" . $project_budget . "', project_status = '" . $project_status . "', modified = NOW(), user_id_edit = '".$edit_user_id."' WHERE project_id = '" . $project_id . "' ";
         $update = mysqli_query($conn, $sql);
 
         echo '

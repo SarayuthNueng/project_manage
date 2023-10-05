@@ -43,6 +43,7 @@ $row_sum_total = mysqli_fetch_array($result);
                         <div class="col-auto">
                             <label for="fileInput" class="visually-hidden">File</label>
                             <input type="file" class="form-control" name="file" id="fileInput" />
+                            <input type="hidden" class="form-control" name="user_import" value="<?php echo $_SESSION['m_id']?>" />
                         </div>
                         <div class="col-auto">
                             <input type="submit" class="btn btn-primary mb-3" name="importSubmit" value="นำเข้าไฟล์ excel">

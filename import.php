@@ -1,5 +1,7 @@
 <?php 
- 
+session_start();
+ $user_id_import = $_SESSION['m_id'];
+
 // Load the database configuration file 
 include ('./db/connect.php'); 
  
@@ -38,12 +40,12 @@ if(isset($_POST['importSubmit'])){
 
                 // update if ซ้ำ
                 if($num > 0){
-                    $sql1 = " UPDATE project SET project_budget = '".$project_budget."', modified = NOW() WHERE project_plan = '".$project_plan."' AND project_name = '".$project_name."' ";
+                    $sql1 = " UPDATE project SET project_budget = '".$project_budget."', modified = NOW(), user_id_import = '".$user_id_import."' WHERE project_plan = '".$project_plan."' AND project_name = '".$project_name."' ";
                     $update_import = mysqli_query($conn, $sql1);
 
                 // บันทึกถ้าไม่ซ้ำ 
                 }else{
-                    $sql2 = " INSERT INTO project (plan_code,project_plan, project_name, project_budget, project_status, created, modified) VALUES ('".$plan_code."','".$project_plan."', '".$project_name."', '".$project_budget."', 'อนุมัติ', NOW(), NOW() ) ";
+                    $sql2 = " INSERT INTO project (plan_code,project_plan, project_name, project_budget, project_status, created, modified, user_id_import) VALUES ('".$plan_code."','".$project_plan."', '".$project_name."', '".$project_budget."', 'อนุมัติ', NOW(), NOW(), '".$user_id_import."' ) ";
                     $import = mysqli_query($conn, $sql2);
                 }
  

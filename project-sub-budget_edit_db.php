@@ -12,6 +12,7 @@ $sub_id = $_POST['sub_id'];
 $sub_budget = $_POST['sub_budget'];
 $sub_p_plan_id = $_POST['sub_p_plan_id'];
 $sub_p_name_id = $_POST['sub_p_name_id'];
+$edit_m_id = $_POST['edit_m_id'];
 
 ?>
 
@@ -21,7 +22,7 @@ $sub_p_name_id = $_POST['sub_p_name_id'];
     if(!isset($_POST['sub_budget_edit'])) {
         Header("Location: home.php");
     }else{
-        $sql = " UPDATE sub_budget SET sub_budget = '" . $sub_budget . "', sub_p_plan_id = '" . $sub_p_plan_id . "', sub_p_name_id = '" . $sub_p_name_id . "', sub_modified = NOW() WHERE sub_id = '" . $sub_id . "'  ";
+        $sql = " UPDATE sub_budget SET sub_budget = '" . $sub_budget . "', sub_p_plan_id = '" . $sub_p_plan_id . "', sub_p_name_id = '" . $sub_p_name_id . "', sub_modified = NOW(), edit_budget_m_id = '".$edit_m_id."' WHERE sub_id = '" . $sub_id . "'  ";
         $update = mysqli_query($conn, $sql);
 
         echo '
