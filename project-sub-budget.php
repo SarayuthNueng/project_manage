@@ -106,10 +106,12 @@ include('./db/connect.php');
                                             <?php }
                                         } else { ?>
                                             <tr>
-                                            <td>ไม่มีข้อมูล...</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                                <td>ไม่มีข้อมูล...</td>
+                                                <td></td>
+                                                <td></td>
+                                                <?php if (($_SESSION['level'] == 'finance') or ($_SESSION['level'] == 'admin')) { ?>
+                                                    <td></td>
+                                                <?php } ?>
                                             </tr>
                                         <?php } ?>
                                     </tbody>
@@ -141,5 +143,5 @@ include('./db/connect.php');
 
 
     <?php include('./include/footer.php') ?>
-    <?php include('./include/datatable.php')?>
+    <?php include('./include/datatable.php') ?>
 </div>
