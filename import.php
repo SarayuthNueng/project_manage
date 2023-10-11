@@ -2,6 +2,11 @@
 session_start();
  $user_id_import = $_SESSION['m_id'];
 
+ echo '<pre>';
+ print_r($_POST);
+ echo '</pre>';
+//  exit;
+
 // Load the database configuration file 
 include ('./db/connect.php'); 
  
