@@ -89,6 +89,7 @@ $row_sum_total = mysqli_fetch_array($result);
                                 <td></td>
                                 <td></td>
                                 <td></td>
+                                <td></td>
                             </tr>
                         <?php } ?>
                     </tbody>
