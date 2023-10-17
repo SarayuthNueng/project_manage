@@ -2,6 +2,9 @@
 session_start();
 include('./db/connect.php');
 ?>
+<?php if(!$_SESSION){
+    Header("Location: home.php");
+}else{ ?>
 <?php include('./include/head.php') ?>
 <?php include('./include/sidebar.php') ?>
 <!--  Header Start -->
@@ -45,10 +48,10 @@ include('./db/connect.php');
                                 <thead class="table-dark">
                                     <tr>
                                         <th>ลำดับ</th>
-                                        <th>รหัสโครงการ</th>
-                                        <th>ชื่อแผนงาน</th>
-                                        <th>ชื่อโครงการ/กิจกรรม</th>
-                                        <th>งบประมาณตั้งต้น(บาท)</th>
+                                        <th>เลขที่</th>
+                                        <th>ชื่อโครงการ</th>
+                                        <th>กิจกรรม</th>
+                                        <th>งบประมาณที่ขอใช้(บาท)</th>
                                         <th>รายการงบประมาณที่ใช้ไป(บาท)</th>
                                     </tr>
                                 </thead>
@@ -74,6 +77,7 @@ include('./db/connect.php');
                                     } else { ?>
                                         <tr>
                                         <td>ไม่พบข้อมูล...</td>
+                                        <td></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>
@@ -109,3 +113,4 @@ include('./db/connect.php');
     <?php include('./include/footer.php') ?>
     <?php include('./include/datatable.php') ?>
 </div>
+<?php } ?>

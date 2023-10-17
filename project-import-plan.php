@@ -9,6 +9,9 @@ $row_sum_total = mysqli_fetch_array($result);
 // echo 'total:' . $row_sum_total[0];
 // exit;
 ?>
+<?php if(!$_SESSION){
+    Header("Location: home.php");
+}else{ ?>
 <!-- Show/hide Excel file upload form -->
 <script>
     function formToggle(ID) {
@@ -56,10 +59,10 @@ $row_sum_total = mysqli_fetch_array($result);
                     <thead class="table-dark">
                         <tr>
                             <th>ลำดับ</th>
-                            <th>รหัสโครงการ</th>
-                            <th>ชื่อแผนงาน</th>
-                            <th>ชื่อโครงการ/กิจกรรม</th>
-                            <th>งบประมาณตั้งต้น(บาท)</th>
+                            <th>เลขที่</th>
+                            <th>ชื่อโครงการ</th>
+                            <th>กิจกรรม</th>
+                            <th>งบประมาณที่ขอใช้(บาท)</th>
                             <th>แก้ไข</th>
                         </tr>
                     </thead>
@@ -114,3 +117,4 @@ $row_sum_total = mysqli_fetch_array($result);
 
 <?php include('./include/datatable.php') ?>
 </div>
+<?php } ?>

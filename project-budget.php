@@ -2,6 +2,9 @@
 session_start();
 include('./db/connect.php');
 ?>
+<?php if(!$_SESSION){
+    Header("Location: home.php");
+}else{ ?>
 <?php include('./include/head.php') ?>
 <?php include('./include/sidebar.php') ?>
 <!--  Header Start -->
@@ -91,3 +94,4 @@ include('./db/connect.php');
 
     <?php include('./include/footer.php') ?>
 </div>
+<?php } ?>
